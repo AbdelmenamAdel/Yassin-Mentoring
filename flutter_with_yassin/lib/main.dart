@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_with_yassin/session2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +16,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blueGrey,
+          backgroundColor: Colors.brown,
 
           leading: Icon(Icons.menu, color: Colors.white, size: 28),
           title: Text(
-            "Session Two",
+            "Session Three",
             style: TextStyle(
               color: Colors.white,
               fontWeight: .bold,
@@ -35,100 +38,77 @@ class MyApp extends StatelessWidget {
         ),
         drawer: Drawer(),
         body: Center(
-          child: Column(
-            mainAxisAlignment: .center,
-            crossAxisAlignment: .center,
-            spacing: 16,
-            children: [
-              // Icon(Icons.person, color: Colors.orange, size: 28),
-              // Padding(
-              //   padding: const EdgeInsets.all(24),
-              //   child: Icon(Icons.person, color: Colors.orange, size: 86),
-              // ),
-              // SizedBox(
-              //   height: 50,
-              //   width: 50,
-              //   child: Align(
-              //     alignment: AlignmentGeometry.center,
-              //     child: Icon(Icons.person, color: Colors.orange, size: 28),
-              //   ),
-              // ),
-              Stack(
-                alignment: .bottomCenter,
-                children: [
-                  Container(
-                    height: 175,
-                    width: 175,
-                    decoration: BoxDecoration(
-                      color: Colors.blueGrey,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () {
+                    log("icon button is clicked");
+                  },
+                  icon: Icon(Icons.add_a_photo, color: Colors.brown),
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(overlayColor: Colors.brown),
+                  onPressed: () {
+                    log("text button is clicked");
+                  },
+                  child: Text(
+                    "Click Me",
+                    style: TextStyle(color: Colors.brown),
                   ),
-                  Container(
-                    height: 100,
-                    width: 280,
-                    decoration: BoxDecoration(
-                      color: Colors.deepOrange,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.brown,
                   ),
-                  Container(
-                    height: 280,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Icon(Icons.person, color: Colors.white, size: 36),
+                  onPressed: () {
+                    log("Elevated button is pressed");
+                  },
+                  child: Text(
+                    "Elevated Button",
+                    style: TextStyle(color: Colors.white),
                   ),
-                  Positioned(
-                    bottom: 20,
-                    right: 20,
-                    child: Icon(
-                      Icons.notifications_active,
-                      color: Colors.white,
-                      size: 36,
-                    ),
+                ),
+                OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(color: Colors.brown, width: 1),
+                    overlayColor: Colors.brown,
                   ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: .center,
-                crossAxisAlignment: .center,
-                spacing: 16,
-                children: [
-                  Flexible(
-                    child: Container(
-                      height: 100,
-                      // width: 100,
-                      decoration: BoxDecoration(
-                        color: Colors.blueGrey,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
+                  onPressed: () {
+                    log("Outlined button is pressed");
+                  },
+                  child: Text(
+                    "Outlined Button",
+                    style: TextStyle(color: Colors.brown),
                   ),
-                  Expanded(
-                    child: Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                        color: Colors.deepOrange,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
+                ),
+                MaterialButton(
+                  color: Colors.brown,
+                  onPressed: () {
+                    log("Material Button is clicked");
+                  },
+                  child: Text(
+                    "Material button",
+                    style: TextStyle(color: Colors.white),
                   ),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.brown,
+          onPressed: () {
+            log("Floating Button is clicked");
+          },
+          child: Icon(Icons.camera_alt, color: Colors.white),
         ),
       ),
     );
   }
 }
-
-// Column - Row - Center
-// SizedBox - Padding
-// Container
-// Align - Positioned - Stack
-// Expanded - Flexible
+// IconButton - TextButton - ElevatedButton
+// MaterialButton - OutlinedButton - FloatingButton
