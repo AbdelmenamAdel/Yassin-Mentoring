@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_with_yassin/sepha_app.dart';
 
-import 'business_card_app.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: BusinessCardApp()
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: SephaApp());
   }
 }
