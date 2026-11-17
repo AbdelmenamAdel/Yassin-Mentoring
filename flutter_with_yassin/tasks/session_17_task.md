@@ -5,7 +5,7 @@
 - send a message that you finished it on the group 
 (message with a screenshot)
 - make the background in white and everything else in green and white only
-- deadline is Monday at 11:00 pm  
+- deadline is Thursday at 11:00 pm  
 - Style the Elevated Button in basketball counter background color in green and the text color in white 
 
 ![alt text](task16.png)
